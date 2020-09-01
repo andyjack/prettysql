@@ -16,10 +16,11 @@ def pretty_sql(sql):
 
     sql = indent + _sqlparse.format(
         sql,
-        reindent = True,
-        keyword_case = 'upper',
+        identifier_case = 'lower',
         indent_width = 4,
-        indent_tabs = False,
+        keyword_case = 'upper',
+        reindent = True,
+        use_space_around_operator = True,
     ).replace("\n", "\n" + indent)
 
     # remove empty lines
